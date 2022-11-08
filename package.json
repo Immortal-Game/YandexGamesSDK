@@ -1,0 +1,23 @@
+{
+  "name": "com.imgames.yandexsdk",
+  "version": "1.0.0",
+  "displayName": "YandexSDK",
+  "description": "This SDK is intended for publishing your WEbGL project on the Yandex platform",
+  "unity": "2019.1",
+  "unityRelease": "0b5",
+  "documentationUrl": "https://docs.immortal-games.online/",
+  "changelogUrl": "https://example.com/changelog.html",
+  "licensesUrl": "https://example.com/licensing.html",
+  "samples": [
+    {
+      "displayName": "WebGl Tamplate",
+      "description": "Tamplate for yandex",
+      "path": "Samples/WebGLTemplates"
+    }
+  ],
+  "author": {
+    "name": "Vladislav",
+    "email": "vlad.kalinovskiy.2013@mail.ru",
+    "url": "https://github.com/Vladislav12324/"
+  }
+}
