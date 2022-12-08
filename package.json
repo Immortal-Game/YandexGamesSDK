@@ -1,6 +1,6 @@
 {
   "name": "com.imgames.yandexsdk",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "displayName": "YandexSDK",
   "description": "This SDK is intended for publishing your WEbGL project on the Yandex platform",
   "unity": "2019.1",
