@@ -1,10 +1,8 @@
 {
-    "name": "ImGames.YandexSdk.Editor",
+    "name": "ImGames.YandexSDK",
     "rootNamespace": "",
     "references": [],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
