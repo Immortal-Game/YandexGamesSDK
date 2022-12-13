@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using Eiko.YaSDK.Editor;
 #endif
 
@@ -81,6 +81,8 @@ namespace Eiko.YaSDK
 
         public event Action onClose;
 
+        private bool soundBefore;
+
         public Queue<int> rewardedAdPlacementsAsInt = new Queue<int>();
         public Queue<string> rewardedAdsPlacements = new Queue<string>();
         private Action<ReviewCallback> actionReview;
@@ -129,6 +131,8 @@ namespace Eiko.YaSDK
                 editorCanvas.OpenFullScreen();
 #endif
                 Time.timeScale = 0;
+                soundBefore = AudioListener.pause;
+                AudioListener.pause = true;
             }
             else
             {
@@ -149,6 +153,8 @@ namespace Eiko.YaSDK
             rewardedAdPlacementsAsInt.Enqueue(placemantId);
             rewardedAdsPlacements.Enqueue(placement);
             Time.timeScale = 0;
+            soundBefore = AudioListener.pause;
+            AudioListener.pause = true;
 #if UNITY_EDITOR
             editorCanvas.OpenReward(placemantId);
 #endif
@@ -186,6 +192,7 @@ namespace Eiko.YaSDK
         public void OnInterstitialShown() {
             onInterstitialShown?.Invoke();
             Time.timeScale = 1;
+            AudioListener.pause = soundBefore;
         }
 
         /// <summary>
@@ -195,6 +202,8 @@ namespace Eiko.YaSDK
         public void OnInterstitialError(string error) {
             onInterstitialFailed?.Invoke(error);
             Time.timeScale = 1;
+
+            AudioListener.pause = soundBefore;
         }
 
         /// <summary>
@@ -223,6 +232,8 @@ namespace Eiko.YaSDK
         public void OnRewardedClose(int placement) {
             onRewardedAdClosed?.Invoke(placement);
             Time.timeScale = 1;
+
+            AudioListener.pause = soundBefore;
         }
 
         /// <summary>
@@ -234,6 +245,8 @@ namespace Eiko.YaSDK
             rewardedAdsPlacements.Clear();
             rewardedAdPlacementsAsInt.Clear();
             Time.timeScale = 1;
+            
+            AudioListener.pause = soundBefore;
         }
 
         /// <summary>
