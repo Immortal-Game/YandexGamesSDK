@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -85,3 +86,4 @@ public enum DisplayMode
     Portrait,
     Landscape
 }
+#endif
